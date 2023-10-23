@@ -1,0 +1,43 @@
+Jika input >= 85 maka A, jika input >= 70 maka B, dst. Jika A atau B atau C maka Lulus, selainnya Tidak Lulus.
+<hr />
+<input type="number" id="na" /> <button onclick="cek()">cek</button>
+<div>Huruf Mutu: <label id="hm">??</label></div>
+<div>keterangan: <label id="ket">??</label></div>
+
+
+<script>
+    function cek(){
+        let na = document.getElementById("na").value;
+        let hm;
+        let ket;
+
+        na = parseInt(na);
+
+        if(isNaN(na)){
+            hm = "???";
+            ket = "???";
+        }else {
+            if(na>=85){
+                hm="A"
+            }else if(na>=70){
+                hm="B"
+            }else if(na>=60){
+                hm="C"
+            }else if(na>=40){
+                hm="D"
+            }else{
+                hm="E"
+            }
+        }
+
+        if(hm=="A" || hm=="B" || hm=="C"){
+            ket="Lulus"
+        }else{
+            ket = "Tidak Lulus"
+        }
+
+        document.getElementById('hm').innerHTML = hm
+        document.getElementById('ket').innerHTML = ket
+        console.log(na);
+    }
+</script>
